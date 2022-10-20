@@ -1,0 +1,91 @@
+# Note: This file is for development purpose only.
+version: '3'
+
+services:
+  web:
+    image: nginx:1.23-alpine
+    container_name: cakephp-loki-web
+    ports:
+      - "8765:80"
+    volumes:
+      # Nginx config
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      # Application files
+      - ./bin:/var/www/html/bin
+      - ./config:/var/www/html/config
+      - ./plugins:/var/www/html/plugins
+      - ./resources:/var/www/html/resources
+      - ./src:/var/www/html/src
+      - ./templates:/var/www/html/templates
+      - ./tests:/var/www/html/tests
+      - ./vendor:/var/www/html/vendor
+      - ./webroot:/var/www/html/webroot
+      - ./server.php:/var/www/html/server.php
+      - ./index.php:/var/www/html/index.php
+      - ./phpunit.xml.dist:/var/www/html/phpunit.xml.dist
+    depends_on:
+      - app
+    networks:
+      - cakephp-loki
+  app:
+    build: .
+    container_name: cakephp-loki-app
+    # Send logs to fluentd agent
+    logging:
+      driver: "fluentd"
+      options:
+        fluentd-address: localhost:24224
+        tag: app
+    environment:
+      DEBUG: "true"
+      DATABASE_URL: "mysql://my_app:secret@db/my_app?encoding=utf8&timezone=UTC&cacheMetadata=true"
+    volumes:
+      - ./bin:/var/www/html/bin
+      - ./config:/var/www/html/config
+      - ./plugins:/var/www/html/plugins
+      - ./resources:/var/www/html/resources
+      - ./src:/var/www/html/src
+      - ./templates:/var/www/html/templates
+      - ./tests:/var/www/html/tests
+      - ./vendor:/var/www/html/vendor
+      - ./webroot:/var/www/html/webroot
+      - ./server.php:/var/www/html/server.php
+      - ./index.php:/var/www/html/index.php
+      - ./phpunit.xml.dist:/var/www/html/phpunit.xml.dist
+    depends_on:
+      - db
+    networks:
+      - cakephp-loki
+  db:
+    platform: linux/x86_64 # Required for Apple silicon M1
+    image: mysql:5.7
+    container_name: cakephp-loki-db
+    restart: always
+    volumes:
+      - db-vol:/var/lib/mysql:rw
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_DATABASE=my_app
+      - MYSQL_USER=my_app
+      - MYSQL_PASSWORD=secret
+    command: mysqld --sql_mode="NO_ENGINE_SUBSTITUTION" --character-set-server=utf8 --collation-server=utf8_unicode_ci --init-connect='SET NAMES UTF8;' --innodb-flush-log-at-trx-commit=0
+    ports:
+      - "3307:3306"
+    networks:
+      - cakephp-loki
+  adminer:
+    image: adminer
+    container_name: cakephp-loki-adminer
+    restart: always
+    ports:
+      - "9001:8080"
+    depends_on:
+      - db
+    networks:
+      - cakephp-loki
+
+networks:
+  cakephp-loki:
+
+volumes:
+  db-vol:

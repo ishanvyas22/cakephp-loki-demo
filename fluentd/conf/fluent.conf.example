@@ -1,0 +1,28 @@
+<source>
+    @type forward
+    port 24224
+    bind 0.0.0.0
+
+    tag app
+</source>
+
+<filter app>
+    @type record_transformer
+    <record>
+        service_name ${tag}
+    </record>
+</filter>
+
+<match app.**>
+    @type loki
+
+    url "__GRAFANA_URL__"
+    username "__GRAFANA_USERNAME__"
+    password "__GRAFANA_PASSWORD__"
+
+    extra_labels {"env":"dev"}
+
+    flush_interval 10s
+    flush_at_shutdown true
+    buffer_chunk_limit 1m
+</match>
