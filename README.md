@@ -26,7 +26,7 @@ cd ishanvyas22/cakephp-loki-demo
     docker run -it -p 24224:24224 -v $(pwd)/fluentd/conf:/fluentd/etc cakephp-loki-fluentd
     ```
 
-    If above commands ran succesffuly, then fluentd agent is ready to accept logs.
+    If above commands run successfully, then fluentd agent is ready to accept logs. Make sure to keep this command running in background so it can gather and send logs to Loki.
 
 3. Finally, start the application using below command:
     ```bash
