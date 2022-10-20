@@ -2,6 +2,8 @@
 
 A demo application to send [CakePHP](https://cakephp.org/) docker container logs to [Grafana Loki](https://grafana.com/logs/) via [Fluentd](https://www.fluentd.org/).
 
+![Default page screenshot](./screenshot.png)
+
 Here, I've used CakePHP application but any containzed application logging to stderr/stdout can work.
 
 ## Installation
