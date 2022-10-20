@@ -73,16 +73,6 @@ services:
       - "3307:3306"
     networks:
       - cakephp-loki
-  adminer:
-    image: adminer
-    container_name: cakephp-loki-adminer
-    restart: always
-    ports:
-      - "9001:8080"
-    depends_on:
-      - db
-    networks:
-      - cakephp-loki
 
 networks:
   cakephp-loki:
