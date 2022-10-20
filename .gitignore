@@ -54,4 +54,4 @@ yarn-error.log
 
 # Fluentd #
 ###########
-/fluentd/conf/fluentd.conf
+/fluentd/conf/fluent.conf
