@@ -20,7 +20,7 @@
     username "__GRAFANA_USERNAME__"
     password "__GRAFANA_PASSWORD__"
 
-    extra_labels {"env":"dev"}
+    extra_labels {"job":"fluentd"}
 
     flush_interval 10s
     flush_at_shutdown true
