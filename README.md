@@ -10,7 +10,7 @@ Here, I've used CakePHP application but any containzed application logging to st
 
 ```bash
 git clone git@github.com:ishanvyas22/cakephp-loki-demo.git
-cd ishanvyas22/cakephp-loki-demo
+cd cakephp-loki-demo
 ```
 
 ## Configuration
