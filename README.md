@@ -8,8 +8,8 @@ Here, I've used CakePHP application but any containzed application logging to st
 
 ## Requirements
 
-- [Docker](https://docs.docker.com/get-docker/) 20 or newer
-- Grafana Loki instance. You can create it from [Grafana Cloud](https://grafana.com/), it's free to play around.
+- [Docker](https://docs.docker.com/get-docker/) v20 or newer
+- Grafana Loki instance. **Recommended:** [Grafana Cloud](https://grafana.com/), it's free to play around.
 
 ## Installation
 
