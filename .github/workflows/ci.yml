@@ -3,9 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - '4.x'
-      - '4.next'
-      - '5.x'
+      - 'main'
   pull_request:
     branches:
       - '*'
