@@ -2141,16 +2141,16 @@
         },
         {
             "name": "cakephp/debug_kit",
-            "version": "4.10.0",
+            "version": "4.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/debug_kit.git",
-                "reference": "65918d04944af4c923d15c31ea60f941207788de"
+                "reference": "c1cda97cd8ce434f8f8cf992e6eba82f45eb3368"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/debug_kit/zipball/65918d04944af4c923d15c31ea60f941207788de",
-                "reference": "65918d04944af4c923d15c31ea60f941207788de",
+                "url": "https://api.github.com/repos/cakephp/debug_kit/zipball/c1cda97cd8ce434f8f8cf992e6eba82f45eb3368",
+                "reference": "c1cda97cd8ce434f8f8cf992e6eba82f45eb3368",
                 "shasum": ""
             },
             "require": {
@@ -2204,7 +2204,7 @@
                 "issues": "https://github.com/cakephp/debug_kit/issues",
                 "source": "https://github.com/cakephp/debug_kit"
             },
-            "time": "2023-10-23T16:03:16+00:00"
+            "time": "2023-11-23T17:08:49+00:00"
         },
         {
             "name": "cakephp/twig-view",
