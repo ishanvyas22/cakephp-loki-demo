@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f244ac633047273a1b5ea212508ae966",
+    "content-hash": "ca413fa2724c6bf8e6bb9081bf01cf9c",
     "packages": [
         {
             "name": "cakephp/cakephp",
@@ -3015,16 +3015,16 @@
         },
         {
             "name": "josegonzalez/dotenv",
-            "version": "3.2.0",
+            "version": "4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/josegonzalez/php-dotenv.git",
-                "reference": "f19174d9d7213a6c20e8e5e268aa7dd042d821ca"
+                "reference": "e97dbd3db53508dcd536e73ec787a7f11458d41d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/josegonzalez/php-dotenv/zipball/f19174d9d7213a6c20e8e5e268aa7dd042d821ca",
-                "reference": "f19174d9d7213a6c20e8e5e268aa7dd042d821ca",
+                "url": "https://api.github.com/repos/josegonzalez/php-dotenv/zipball/e97dbd3db53508dcd536e73ec787a7f11458d41d",
+                "reference": "e97dbd3db53508dcd536e73ec787a7f11458d41d",
                 "shasum": ""
             },
             "require": {
@@ -3032,9 +3032,9 @@
                 "php": ">=5.5.0"
             },
             "require-dev": {
-                "php-mock/php-mock-phpunit": "^1.1",
-                "satooshi/php-coveralls": "1.*",
-                "squizlabs/php_codesniffer": "2.*"
+                "php-coveralls/php-coveralls": "~2.0",
+                "php-mock/php-mock-phpunit": "~1.1||~2.0",
+                "squizlabs/php_codesniffer": "~2.9||~3.7"
             },
             "type": "library",
             "autoload": {
@@ -3066,9 +3066,9 @@
             ],
             "support": {
                 "issues": "https://github.com/josegonzalez/php-dotenv/issues",
-                "source": "https://github.com/josegonzalez/php-dotenv/tree/master"
+                "source": "https://github.com/josegonzalez/php-dotenv/tree/4.0.0"
             },
-            "time": "2017-09-19T15:49:58+00:00"
+            "time": "2023-05-29T22:49:26+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -5774,12 +5774,12 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": ">=7.4"
     },
-    "platform-dev": [],
-    "plugin-api-version": "2.6.0"
+    "platform-dev": {},
+    "plugin-api-version": "2.9.0"
 }
